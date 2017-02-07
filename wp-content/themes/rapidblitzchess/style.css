@@ -1,0 +1,103 @@
+﻿/*
+Theme Name:         Rapid & Blitz Chess Open Tournament
+Theme URI:          
+Description:        
+Version:            1
+Author:             JA Media Solutions
+Author URI:         http://www.jamediasolutions.com/
+Tags: 
+Text Domain: rapidblitzchess
+*/
+
+/*----------------------------------------------*/
+/* Global Reset */
+/*----------------------------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font: inherit;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+
+/*----------------------------------------------*/
+/* Extra fonts */
+/*----------------------------------------------*/
+@font-face {font-family: 'ProximaNova-Black'; src: url('fonts/proximanova-black-webfont.woff2') format('woff2'), url('fonts/proximanova-black-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'ProximaNova-Bold'; src: url('fonts/proximanova-bold-webfont.woff2') format('woff2'), url('fonts/proximanova-bold-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'ProximaNova-BoldIt'; src: url('fonts/proximanova-boldit-webfont.woff2') format('woff2'), url('fonts/proximanova-boldit-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'ProximaNova-Extrabold'; src: url('fonts/proximanova-extrabold-webfont.woff2') format('woff2'), url('fonts/proximanova-extrabold-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'ProximaNova-Light'; src: url('fonts/proximanova-light-webfont.woff2') format('woff2'), url('fonts/proximanova-light-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'ProximaNova-LightItalic'; src: url('fonts/proximanova-lightitalic-webfont.woff2') format('woff2'), url('fonts/proximanova-lightitalic-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'ProximaNova-Regular'; src: url('fonts/proximanova-regular-webfont.woff2') format('woff2'), url('fonts/proximanova-regular-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'ProximaNova-RegularItalic'; src: url('fonts/proximanova-regularitalic-webfont.woff2') format('woff2'), url('fonts/proximanova-regularitalic-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'ProximaNova-Semibold'; src: url('fonts/proximanova-semibold-webfont.woff2') format('woff2'), url('fonts/proximanova-semibold-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'ProximaNova-SemiboldItalic'; src: url('fonts/proximanova-semibolditalic-webfont.woff2') format('woff2'), url('fonts/proximanova-semibolditalic-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'Arimo Bold'; src: url('fonts/arimo-bold-webfont.woff2') format('woff2'), url('fonts/arimo-bold-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'Arimo Regular'; src: url('fonts/arimo-regular-webfont.woff2') format('woff2'), url('fonts/arimo-regular-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+
+/*----------------------------------------------*/
+/* Base */
+/*----------------------------------------------*/
+html{-webkit-tap-highlight-color:transparent; -webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;margin:0;padding:0;height:100%;overflow-y: scroll;}
+
+/*----------------------------------------------*/
+/* Base */
+/*----------------------------------------------*/
+
+
+/*----------------------------------------------*/
+/* Header */
+/*----------------------------------------------*/
+
+
+/*----------------------------------------------*/
+/* Main */
+/*----------------------------------------------*/
+
+/*----------------------------------------------*/
+/* Forms */
+/*----------------------------------------------*/
+
+
+/*----------------------------------------------*/
+/* Custom Widget */
+/*----------------------------------------------*/
+
+/*----------------------------------------------*/
+/* Hamburger */
+/*----------------------------------------------*/
+
+
+/*----------------------------------------------*/
+/* Breadcrumb */
+/*----------------------------------------------*/
+
+
+/*----------------------------------------------*/
+/* Homepage */
+/*----------------------------------------------*/
+
+
+/*----------------------------------------------*/
+/* Owl Carousel */
+/*----------------------------------------------*/
+
+
+
+/*----------------------------------------------*/
+/* Default Accordion */
+/*----------------------------------------------*/
+
+
+/*----------------------------------------------*/
+/* Modal */
+/*----------------------------------------------*/
+
+/*----------------------------------------------*/
+/* Tooltip */
+/*----------------------------------------------*/
+
+/*----------------------------------------------*/
+/* Footer */
+/*----------------------------------------------*/
