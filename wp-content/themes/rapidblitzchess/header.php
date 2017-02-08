@@ -17,7 +17,8 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title><?php wp_title(' - ','true','right'); ?><?php bloginfo('name'); ?></title>
+	<?php $blogname = get_bloginfo('name'); $blogdesc = get_bloginfo('description'); ?>
+	<title><?php wp_title(' - ','true','right'); ?><?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?></title>
 	<!--[if IE]>
 		<link href="<?php echo get_stylesheet_directory_uri(); ?>/ie.css" rel="stylesheet" type="text/css" media="all" />
 	<![endif]-->
@@ -33,6 +34,9 @@
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/animate.css" />
 	<link rel="stylesheet" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/css/lightbox.css" />
 	<link rel="stylesheet" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/css/modal.css" />
+
+	<!-- Vegas Background Slideshow -->
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/vegas.min.css">
 
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/layout.css" />
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
@@ -63,13 +67,23 @@
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 </head>
 <body <?php id_the_body(); ?><?php class_the_body(); ?>>
-	<div id="header_overlay"></div>
-	<header id="main-header">
-		<div class="top-header">
-			<div class="container">
-				<div class="row">
+	<div id="wrapper">
+		<div id="header_overlay"></div>
+		<header id="main_header">
+			<div class="top_header">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 column-logo">
+							<a href="<?php echo get_settings('home'); ?>" title="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" class="logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/header-logo.png" title="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" alt="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" width="400" height="205" /></a>
+						</div>
+						<div class="col-md-8 column-nav">
+							<div id="primary_navigation">
+								<?php wp_nav_menu( array( 'theme_location' => 'primary_navigation', 'items_wrap' => '<ul class="primary-menu">%3$s</ul>', 'container' => '' ) ); ?>
+							</div>
+						</div>
+						<div class="clearfix clear"></div>
+					</div>
+					<div class="clearfix"></div>
 				</div>
-				<div class="clearfix"></div>
 			</div>
-		</div>
-	</header>
+		</header>

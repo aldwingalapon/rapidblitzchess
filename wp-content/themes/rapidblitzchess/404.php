@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-<div id="main-content" class="page-not-found">
+	<div id="main_content" class="page-not-found">
 
-</div>
+	</div>
 
 <?php wp_reset_query(); ?>
 

@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-<div id="main-content" class="archives-page">
+	<div id="main_content" class="archives-page">
 
-</div>
+	</div>
 
 <?php wp_reset_query(); ?>
 

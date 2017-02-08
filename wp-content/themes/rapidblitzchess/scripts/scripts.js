@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip({html: true}); 
+	
+	$("header#main_header .top_header .column-nav").height($('header#main_header .top_header .column-logo').height());
 
 });
 
@@ -7,15 +9,15 @@ function init() {
 	window.addEventListener('scroll', function(e){
 		var distanceY = window.pageYOffset || document.documentElement.scrollTop,
 		shrinkOn = 800,
-		header = document.querySelector("header#main-header .top-header");
+		header = document.querySelector("header#main_header .top_header");
 		if ($(window).width() >= 600) {
 			if (distanceY > shrinkOn) {
 				classie.add(header,"scrolled");
-				$("#main-content").css('padding-top', $("header#main-header").height() + 'px');
+				$("#main_content").css('padding-top', $("header#main_header").height() + 'px');
 			} else {
 				if (classie.has(header,"scrolled")) {
 					classie.remove(header,"scrolled");
-					$("#main-content").css('padding-top', '0');
+					$("#main_content").css('padding-top', '0');
 				}
 			}
 		}
