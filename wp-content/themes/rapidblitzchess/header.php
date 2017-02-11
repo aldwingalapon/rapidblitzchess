@@ -76,6 +76,7 @@
 					<div class="row">
 						<div class="col-md-2 column-logo">
 							<a href="<?php echo get_settings('home'); ?>" title="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" class="logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_sm.png" title="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" alt="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" width="100" height="100" /></a>
+							<button class="c-hamburger c-hamburger--htx"><span>toggle menu</span></button>
 						</div>
 						<div class="col-md-10 column-nav">
 							<div id="primary_navigation">

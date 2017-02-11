@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div id="main_content" class="homepage frontpage">
+	<div id="main_content" class="homepage">
 		<div class="container">
 			<div class="row" id="feature">
 				<div class="col-md-4">

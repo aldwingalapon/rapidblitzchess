@@ -1,4 +1,6 @@
 @media only screen and (max-width:7680px){
+	.c-hamburger{display:none !important;}
+
 	header#main_header .top_header #primary_navigation{position:absolute;bottom:1.25rem;}
 	header#main_header .top_header #primary_navigation > ul > li > a{font-size:15px;margin:0;padding:1rem 1.1rem;}
 	header#main_header .top_header #primary_navigation > ul > li:hover > .sub-menu > li > a{font-size:16px;margin:0;padding:0.75rem 1.5rem;}
@@ -32,6 +34,7 @@
 }
 
 @media only screen and (max-width:1023px){
+	.c-hamburger{display:block !important;}
 }
 
 @media only screen and (max-width: 960px){

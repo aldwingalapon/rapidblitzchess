@@ -106,6 +106,13 @@ header#main_header .top_header #primary_navigation > ul > li:hover > .sub-menu >
 header#main_header .top_header #primary_navigation > ul > li > .sub-menu > li > .sub-menu > li > a{display:block;width:100%;text-decoration:none;margin:0;padding:0.5rem 1rem;}
 header#main_header .top_header #primary_navigation > ul > li > .sub-menu > li > .sub-menu > li > a:hover, header#main_header .top_header #primary_navigation > ul > li.current-menu-ancestor > .sub-menu > li.current-menu-parent > .sub-menu > li.current-menu-item > a{background-color:#FFF;color: #006600;}
 
+header#main_header .top_header #primary_navigation.menu-on{position: relative; top: 100%;}
+header#main_header .top_header #primary_navigation.menu-on > ul{position:relative;bottom:auto;display:block;width:100%;background-color:rgba(0, 0, 0, 0.4);}
+header#main_header .top_header #primary_navigation.menu-on > ul > li{display:block;width:100%;text-align:center;}
+header#main_header .top_header #primary_navigation.menu-on > ul > li .sub-menu{position:relative;display:block;width:100%;}
+header#main_header .top_header #primary_navigation.menu-on > ul > li .sub-menu li{}
+header#main_header .top_header #primary_navigation.menu-on > ul > li .sub-menu li a{font-size: 14px !important; margin: 0 !important; padding: 0.75rem !important;}
+
 header#main_header .bottom_header{margin:0;padding:1rem 0;}
 header#main_header .bottom_header .countdown-timer{}
 header#main_header .bottom_header .countdown-timer .banner-tournament{position: relative; margin: 0; padding: 1rem 0;}
@@ -258,15 +265,38 @@ body .gform_wrapper span.ginput_total {display: block; width:60%; color: #FFF; f
 /*----------------------------------------------*/
 #main_content.frontpage, #main_content.homepage{}
 #main_content.frontpage #feature, #main_content.homepage #feature{margin-top:-8rem;}
-#main_content.frontpage #feature .content, #main_content.homepage #feature .content{text-align: center; padding: 1rem 2rem; margin: 0 1rem; background-color: rgba(0,102,0,0.8); border: thin solid #F9DE20;}
+#main_content.frontpage #feature .content, #main_content.homepage #feature .content{text-align: center; padding: 1rem 2rem; margin: 0 1rem 2rem; background-color: rgba(0,102,0,0.8); border: thin solid #F9DE20;}
 #feature .content h3{margin-top:0;}
 #feature .content .icon{margin: 2rem 0;}
 #feature .content .icon a{}
 #feature .content .icon a i{font-size:5rem;}
 
 /*----------------------------------------------*/
+/* Hamburger */
+/*----------------------------------------------*/
+.c-hamburger {position:absolute; top:1rem; right:0; overflow: hidden; margin:0 6px; padding:6px 0; width:36px; height: 36px; font-size: 0; text-indent: -9999px; appearance: none; box-shadow: none; border-radius: none; border: none; cursor: pointer; transition: background 0.3s;background-color:transparent;z-index:9999;}
+.c-hamburger:focus {outline: none;}
+.c-hamburger span {display: block; position: absolute; top: 10px; left: 2px; right: 2px; height: 3px; background: rgba(0,102,0,1);}
+.c-hamburger span::before, .c-hamburger span::after {position: absolute; display: block; left: 0; width: 100%; height: 3px; background-color: rgba(0,102,0,1); content: "";}
+.c-hamburger span::before {top: -9px;}
+.c-hamburger span::after {bottom: -9px;}
+.c-hamburger--htx {background-color: transparent;}
+.c-hamburger--htx span {transition: background 0s 0.3s;}
+.c-hamburger--htx span::before, .c-hamburger--htx span::after {transition-duration: 0.3s, 0.3s; transition-delay: 0.3s, 0s;}
+.c-hamburger--htx span::before {transition-property: top, transform;}
+.c-hamburger--htx span::after {transition-property: bottom, transform;}
+
+/* active state, i.e. menu open */
+.c-hamburger--htx.is-active {background-color:transparent;}
+.c-hamburger--htx.is-active span {background: none;}
+.c-hamburger--htx.is-active span::before {background-color: #FFF; top: 0; transform: rotate(45deg);}
+.c-hamburger--htx.is-active span::after {background-color: #FFF; bottom: 0; transform: rotate(-45deg);}
+.c-hamburger--htx.is-active span::before, .c-hamburger--htx.is-active span::after {transition-delay: 0s, 0.3s;}
+
+/*----------------------------------------------*/
 /* Owl Carousel */
 /*----------------------------------------------*/
+
 
 /*----------------------------------------------*/
 /* Default Accordion */
@@ -290,7 +320,7 @@ body .gform_wrapper span.ginput_total {display: block; width:60%; color: #FFF; f
 /*----------------------------------------------*/
 /* Tooltip */
 /*----------------------------------------------*/
-body .tooltip-inner{width:400px;padding:0.75rem 1rem;background-color:rgba(0,102,0,0.6);border-radius:0;}
+body .tooltip-inner{width:400px;padding:0.75rem 1rem;background-color:rgba(0,102,0,0.9);border-radius:0;}
 body .tooltip-inner h3{font-size:13px;line-height:1.2;color:#FEFEFE;margin:0 0 1rem;}
 body .tooltip-inner p{text-align:left;color:#FEFEFE;font-size:12px;line-height:1.1;margin:0;}
 
