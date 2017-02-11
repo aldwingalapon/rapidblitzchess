@@ -62,7 +62,7 @@ function modify_jquery() {
 		wp_enqueue_script('jquery');
 	}
 }
-//add_action('init', 'modify_jquery');
+add_action('init', 'modify_jquery');
 
 // custom menu support
 add_theme_support( 'menus' );
@@ -72,10 +72,9 @@ if ( function_exists('register_sidebar') )
 register_sidebar(array('id'=>'default-sidebar','name'=>'Default Sidebar','before_widget' => '<span id="%1$s" class="widget %2$s">','after_widget' => '</span>','before_title' => '<h2 class="widgettitle">','after_title' => '</h2>',));
 register_sidebar(array('id'=>'footer-one','name'=>'Footer One','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
 register_sidebar(array('id'=>'footer-two','name'=>'Footer Two','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
-register_sidebar(array('id'=>'footer-three','name'=>'Footer Three','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
-register_sidebar(array('id'=>'footer-four','name'=>'Footer Four','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
+register_sidebar(array('id'=>'footer-sponsors','name'=>'Footer Sponsors','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
 register_sidebar(array('id'=>'footer-copyright','name'=>'Footer Copyright','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
-register_sidebar(array('id'=>'footer-social','name'=>'Footer Social','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
+register_sidebar(array('id'=>'footer-menu','name'=>'Footer Menu','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
 
 // thumbnail support
 add_theme_support('post-thumbnails'); 
@@ -187,6 +186,55 @@ function limit_words($string, $word_limit) {
 function the_breadcrumbs() {
 	global $post;
 	echo "<p class='trail'>";
+	if (!is_home()) {
+		echo "<span><a href='".get_option('home')."'>Home</a></span>";
+
+		if (is_category() || is_singular( 'post' )) {
+			echo " <span class='sep'></span> ";
+
+			$post_object = get_field('blogs_page', 'option');
+			if( $post_object ){
+				$post = $post_object;
+				setup_postdata( $post ); 
+
+				echo "<span class='post'><a href='".get_the_permalink()."'>" . get_the_title() . "</a></span>";
+
+				wp_reset_postdata();
+			}
+
+			if (is_category()) {
+				echo " <span class='sep'></span> <span class='single-category'>".single_cat_title( '', false )."</span>";
+			}
+
+			if (is_singular( 'post' )) {
+				echo " <span class='sep'></span> <span class='single-post-".$post->ID."'>".get_the_title()."</span>";
+			}
+		} elseif (is_page()) {
+			if($post->post_parent){
+				$anc = get_post_ancestors( $post->ID );
+				krsort($anc);
+				//$anc_link = get_page_link( $post->post_parent );
+
+				foreach ( $anc as $ancestor ) {
+					echo " <span class='sep'></span> <span><a href=" . get_page_link( $ancestor ) . ">".get_the_title($ancestor)."</a></span> ";
+				}
+
+				echo " <span class='sep'></span> <span>".get_the_title()."</span>";
+			} else {
+				echo " <span class='sep'></span> ";
+				echo "<span>".get_the_title()."</span>";
+			}
+		} elseif (is_search()) {
+			echo " <span class='sep'></span> <span>Search results</span>"; 
+		} elseif (is_404()) {
+			echo " <span class='sep'></span> <span>Error 404: Page Not Found</span>"; 
+		} elseif (is_tag()) {
+			$current_tag = single_tag_title("", false);
+			echo " <span class='sep'></span> <span>Tag Archive: ".$current_tag."</span>";
+		} elseif (is_author()) {
+			echo " <span class='sep'></span> <span>".get_the_author_meta('display_name')."</span>";
+		}
+	}
 	echo "</p>";
 }
 

@@ -58,8 +58,8 @@
 	<link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/images/android-chrome-192x192.png" sizes="192x192" />
 	<link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon-16x16.png" sizes="16x16" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
+	<meta name="description" content="The UPVI Silver Jubilarian Class of ‘92 as lead, and in coordination with the National Chess Federation of the Philippines (NCFP), will organize the first U.P. Vanguard Rapid and Blitz Chess Open Tournament from 29 March to 2 April 2017 in the UP DMST Complex, Diliman, Quezon City." />
+	<meta name="keywords" content="up vanguard, homecoming activity, 95th homecoming celebration, punch your clock, ncfp, class hinirang 92, rapid and blitz chess, open tournament" />
 	<meta name="robots" content="noimageindex, noodp, noydir" />
 	<meta name="author" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
@@ -68,18 +68,71 @@
 </head>
 <body <?php id_the_body(); ?><?php class_the_body(); ?>>
 	<div id="wrapper">
+		<a href="#" class="smooth-scroll"><button type="button" class="back_to_top-button"><i class="fa fa-chevron-up"></i></button></a>
 		<div id="header_overlay"></div>
 		<header id="main_header">
 			<div class="top_header">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-4 column-logo">
-							<a href="<?php echo get_settings('home'); ?>" title="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" class="logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/header-logo.png" title="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" alt="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" width="400" height="205" /></a>
+						<div class="col-md-2 column-logo">
+							<a href="<?php echo get_settings('home'); ?>" title="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" class="logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_sm.png" title="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" alt="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" width="100" height="100" /></a>
 						</div>
-						<div class="col-md-8 column-nav">
+						<div class="col-md-10 column-nav">
 							<div id="primary_navigation">
 								<?php wp_nav_menu( array( 'theme_location' => 'primary_navigation', 'items_wrap' => '<ul class="primary-menu">%3$s</ul>', 'container' => '' ) ); ?>
 							</div>
+						</div>
+						<div class="clearfix clear"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="bottom_header">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-5">
+						</div>
+						<div class="col-md-7 countdown-timer">
+							<div class="banner-tournament">
+								<a href="<?php echo get_settings('home'); ?>" title="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" class="banner-link"><img class="banner-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/banner_sm.png" title="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" alt="<?php echo (($blogname && $blogdesc) ? $blogname . ' - ' . $blogdesc : $blogname); ?>" width="2000" height="750" /></a>
+								<?php echo($blogdesc ? '<p class="site-description">' . $blogdesc . '<span class="date" style="
+">29 March - 2 April, 2017</span></p>' : ''); ?>
+							</div>
+							<div class="rapid-bltz-open-chess-tournament-countdown">
+								<div class="ce-countdown row-fluid">
+									<div class="ce-circle col-md-3 col-sm-3 col-xs-6 shake" title="Days">
+										<canvas id="ce-days" width="200" height="200"></canvas>
+										<div class="ce-circle__values">
+											<span class="ce-digit ce-days"></span>
+											<span class="ce-label ce-days-label"></span>
+										</div>
+									</div>
+									<div class="ce-circle col-md-3 col-sm-3 col-xs-6 shake" title="Hours">
+										<canvas id="ce-hours" width="200" height="200"></canvas>
+										<div class="ce-circle__values">
+											<span class="ce-digit ce-hours"></span>
+											<span class="ce-label ce-hours-label"></span>
+										</div>
+									</div>
+									<div class="ce-circle col-md-3 col-sm-3 col-xs-6 shake" title="Minutes">
+										<canvas id="ce-minutes" width="200" height="200"></canvas>
+										<div class="ce-circle__values">
+											<span class="ce-digit ce-minutes"></span>
+											<span class="ce-label ce-minutes-label"></span>
+										</div>
+									</div>
+									<div class="ce-circle col-md-3 col-sm-3 col-xs-6 shake" title="Seconds">
+										<canvas id="ce-seconds" width="200" height="200"></canvas>
+										<div class="ce-circle__values">
+											<span class="ce-digit ce-seconds"></span>
+											<span class="ce-label ce-seconds-label"></span>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="clearfix"></div>						
 						</div>
 						<div class="clearfix clear"></div>
 					</div>

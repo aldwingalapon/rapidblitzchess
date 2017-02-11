@@ -1,8 +1,101 @@
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip({html: true}); 
+
+	$('.lazy-image').lazy();
+
+	$(window).scroll(function(){
+		var offset = 800,
+		//footerHeight = $('footer').height() + 80,
+		//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+		offset_opacity = 1000;
+		//grab the "back to top" link
+		$back_to_top = $('.back_to_top-button');
+		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('button_visible') : $back_to_top.removeClass('button_visible fade-out');
+		if( $(this).scrollTop() > offset_opacity ) { 
+			$back_to_top.addClass('fade-out');
+		}
+	});
+
+	$('a.smooth-scroll[href^="#"]').on('click',function (e) {
+		e.preventDefault();
+		var target = this.hash;
+		var $target = $(target);
+		if(target == '#accordion') {
+		// do nothing
+		} else if(target.length == 0) {
+			$('html,body').animate({
+			scrollTop: 0
+			}, 1200);
+		} else {
+			$('html, body').stop().animate({
+			'scrollTop': $target.offset().top - 150
+			}, 1200, 'swing');
+		}
+	});
 	
 	$("header#main_header .top_header .column-nav").height($('header#main_header .top_header .column-logo').height());
+});
 
+$(document).ready(function() {
+	$(".rapid-bltz-open-chess-tournament-countdown .ce-countdown").countEverest({
+		hour: 19,
+		minute: 30,
+		day: 29,
+		month: 3,
+		year: 2017,
+		timeZone: 8,
+		leftHandZeros: false,
+		onChange: function() {
+			drawCircle(document.getElementById('ce-days'), this.days, 365);
+			drawCircle(document.getElementById('ce-hours'), this.hours, 24);
+			drawCircle(document.getElementById('ce-minutes'), this.minutes, 60);
+			drawCircle(document.getElementById('ce-seconds'), this.seconds, 60);
+		}
+	});
+
+	function deg(v) {
+		return (Math.PI/180) * v - (Math.PI/2);
+	}
+
+	function drawCircle(canvas, value, max) {
+		var	circle = canvas.getContext('2d');
+		
+		circle.clearRect(0, 0, canvas.width, canvas.height);
+		circle.lineWidth = 16;
+
+		circle.beginPath();
+		circle.arc(
+				canvas.width / 2, 
+				canvas.height / 2, 
+				canvas.width / 2 - circle.lineWidth, 
+				deg(0), 
+				deg(360 / max * (max - value)), 
+				false);
+		circle.strokeStyle = '#FFFFFF';
+		circle.stroke();
+
+		circle.beginPath();
+		circle.arc(
+				canvas.width / 2, 
+				canvas.height / 2, 
+				canvas.width / 2 - circle.lineWidth, 
+				deg(0), 
+				deg(360 / max * (max - value)), 
+				true);
+		circle.strokeStyle = '#006600';
+		circle.stroke();
+	}
+
+	setTimeout(function(){updateCanvasSizes()}, 300);
+
+	// updateBoxes();
+	$(window).resize(function() {
+		setTimeout(function(){updateCanvasSizes()}, 400);
+	});
+
+	function updateCanvasSizes() {
+		//$('.rapid-bltz-open-chess-tournament-countdown .ce-circle').height($('.rapid-bltz-open-chess-tournament-countdown .ce-circle').width());
+	}	
 });
 
 function init() {
